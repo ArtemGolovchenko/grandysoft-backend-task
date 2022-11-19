@@ -10,10 +10,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       subscriberId: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       subscriptionId: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
