@@ -8,6 +8,7 @@
 3. create an empty database:
    ```sh
       HOST: "localhost",
+      PORT: 5432
       USER: "postgres",
       PASSWORD: "postgres",
       DB: "testdb"
