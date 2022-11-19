@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const User = sequelize.define("users", {
+  const Users = sequelize.define("Users", {
     first_name: {
       type: Sequelize.STRING
     },
@@ -8,5 +8,17 @@ module.exports = (sequelize, Sequelize) => {
     },
   });
 
-  return User;
+  Users.belongsToMany(Users, {
+    through: 'UsersSubscriptions',
+    as: 'subscriptions',
+    foreignKey: 'subscriberId',
+  });
+
+  Users.belongsToMany(Users, {
+    through: 'UsersSubscriptions',
+    as: 'subscribers',
+    foreignKey: 'subscriptionId',
+  });
+
+  return Users;
 };
